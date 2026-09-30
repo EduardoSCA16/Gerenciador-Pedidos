@@ -14,18 +14,13 @@ public class Pedido {
 
     // Constructor
     public Pedido() {}
-    public Pedido(Long id, LocalDate data) {
-        this.id = id;
+    public Pedido(LocalDate data) {
         this.data = data;
     }
 
     // Getters e Setters
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public LocalDate getData() {
