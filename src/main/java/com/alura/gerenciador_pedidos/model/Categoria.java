@@ -3,22 +3,19 @@ package com.alura.gerenciador_pedidos.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "produtos")
-public class Produto {
+@Table(name = "categorias")
+public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(unique = true, nullable = false)
+    @Column(unique = true)
     private String nome;
-    @Column(name = "valor")
-    private Double preco;
 
     // Constructor
-    public Produto() {}
-    public Produto(Long id, String nome, Double preco) {
+    public Categoria() {}
+    public Categoria(Long id, String nome) {
         this.id = id;
         this.nome = nome;
-        this.preco = preco;
     }
 
     // Getters e Setters
@@ -36,13 +33,5 @@ public class Produto {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public Double getPreco() {
-        return preco;
-    }
-
-    public void setPreco(Double preco) {
-        this.preco = preco;
     }
 }
