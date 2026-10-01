@@ -2,6 +2,8 @@ package com.alura.gerenciador_pedidos.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "categorias")
 public class Categoria {
@@ -10,6 +12,8 @@ public class Categoria {
     private Long id;
     @Column(unique = true)
     private String nome;
+    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
+    private List<Produto> produtos;
 
     // Constructor
     public Categoria() {}
@@ -28,5 +32,13 @@ public class Categoria {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
     }
 }

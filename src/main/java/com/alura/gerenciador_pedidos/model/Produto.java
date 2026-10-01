@@ -12,12 +12,16 @@ public class Produto {
     private String nome;
     @Column(name = "valor")
     private Double preco;
+    @ManyToOne
+    @JoinColumn(name = "categoria_id")
+    private Categoria categoria;
 
     // Constructor
     public Produto() {}
-    public Produto(String nome, Double preco) {
+    public Produto(String nome, Double preco, Categoria categoria) {
         this.nome = nome;
         this.preco = preco;
+        this.categoria = categoria;
     }
 
     // Getters e Setters
@@ -39,5 +43,13 @@ public class Produto {
 
     public void setPreco(Double preco) {
         this.preco = preco;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 }

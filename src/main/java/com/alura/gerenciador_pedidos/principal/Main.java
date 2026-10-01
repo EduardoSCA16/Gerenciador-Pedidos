@@ -24,12 +24,11 @@ public class Main {
     }
 
     public void executar() {
-        Produto produto = new Produto("Notebook", 3500.0);
-        Categoria categoria = new Categoria("Eletrônicos");
+        Categoria categoriaEletronicos = new Categoria("Eletrônicos");
+        Produto produto = new Produto("Notebook", 3500.0, categoriaEletronicos);
         Pedido pedido = new Pedido(LocalDate.now());
 
         produtoRepository.save(produto);
-        categoriaRepository.save(categoria);
         pedidoRepository.save(pedido);
 
         System.out.println("\nPrograma encerrado corretamente!");
