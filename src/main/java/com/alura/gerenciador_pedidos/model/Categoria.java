@@ -12,7 +12,7 @@ public class Categoria {
     private Long id;
     @Column(unique = true)
     private String nome;
-    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Produto> produtos;
 
     // Constructor
