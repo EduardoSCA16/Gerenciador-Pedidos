@@ -15,13 +15,17 @@ public class Produto {
     @ManyToOne
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
+    @ManyToOne
+    @JoinColumn(name = "fornecedor_id")
+    private Fornecedor fornecedor;
 
     // Constructor
     public Produto() {}
-    public Produto(String nome, Double preco, Categoria categoria) {
+    public Produto(String nome, Double preco, Categoria categoria, Fornecedor fornecedor) {
         this.nome = nome;
         this.preco = preco;
         this.categoria = categoria;
+        this.fornecedor = fornecedor;
     }
 
     // Getters e Setters
