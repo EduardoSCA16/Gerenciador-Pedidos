@@ -7,6 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class GerenciadorPedidosApplication implements CommandLineRunner {
+	private final Main main;
+
+	public GerenciadorPedidosApplication(Main main) {
+		this.main = main;
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(GerenciadorPedidosApplication.class, args);
@@ -14,7 +19,6 @@ public class GerenciadorPedidosApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Main main = new Main();
 		main.executar();
 	}
 }

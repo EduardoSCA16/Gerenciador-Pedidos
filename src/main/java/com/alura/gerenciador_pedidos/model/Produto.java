@@ -28,6 +28,16 @@ public class Produto {
         this.fornecedor = fornecedor;
     }
 
+    // toString
+    @Override
+    public String toString() {
+        return "Id:" + id +
+                "\nNome:" + nome +
+                "\nPreco:" + preco +
+                "\nCategoria:" + categoria +
+                "\nFornecedor:" + fornecedor;
+    }
+
     // Getters e Setters
     public Long getId() {
         return id;
